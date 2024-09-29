@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Rana Toheed Ullah Khan</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+</head>
+<style>
+    .animated-name {
+    opacity: 0; /* Start invisible */
+    transform: translateY(-20px); /* Start from above */
+    animation: fadeInUp 1s forwards; /* Animation effect */
+    animation-delay: 0.5s; /* Delay before animation starts */
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1; /* Fade in */
+        transform: translateY(0); /* Move to original position */
+    }
+}
+
+    body {
+        margin: 0;
+        font-family: 'Arial', sans-serif;
+        background-color: #0f1b2b;
+        color: #fff;
+    }
+
+    nav {
+        display: flex;
+        justify-content: space-between;
+        padding: 20px;
+        background-color: #1e2a3a;
+    }
+
+    nav .logo {
+        font-size: 24px;
+        font-weight: bold;
+        color: #fff;
+    }
+
+    nav ul {
+        display: flex;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    nav ul li {
+        margin-left: 20px;
+    }
+
+    nav ul li a {
+        text-decoration: none;
+        color: #fff;
+        font-weight: bold;
+        padding: 10px 15px;
+        transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    nav ul li a.active,
+    nav ul li a:hover {
+        background-color: #3498db;
+        border-radius: 5px;
+        color: #fff;
+    }
+
+    .hero {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 50px;
+        min-height: 100vh;
+        background: #0f1b2b;
+        background: linear-gradient(145deg, #0f1b2b 50%, #1c293a 50%);
+    }
+
+    .hero .content {
+        max-width: 600px;
+    }
+
+    .hero h1 {
+        font-size: 3em;
+        margin: 0;
+    }
+
+    .hero h2 {
+        font-size: 1.5em;
+        color: #3498db;
+        margin: 10px 0;
+    }
+
+    .hero p {
+        margin: 20px 0;
+        line-height: 1.6;
+    }
+
+    .hero .buttons {
+        margin-top: 30px;
+    }
+
+    .hero .btn {
+        text-decoration: none;
+        color: #fff;
+        background-color: #3498db;
+        padding: 15px 30px;
+        border-radius: 5px;
+        margin-right: 10px;
+        transition: background-color 0.3s ease;
+    }
+
+    .hero .btn.hire-me:hover {
+        background-color: #2980b9;
+    }
+
+    .hero .btn.talk {
+        background-color: transparent;
+        border: 2px solid #3498db;
+    }
+
+    .hero .btn.talk:hover {
+        background-color: #3498db;
+    }
+
+    .hero .image-container {
+    max-width: 400px;
+    overflow: hidden; /* Ensure that the effects do not spill out of the container */
+    position: relative; /* Required for overlay effect */
+}
+
+.hero .image-container img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effects */
+}
+
+.hero .image-container:hover img {
+    transform: scale(1.05); /* Slight zoom effect on hover */
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4); /* Enhanced shadow on hover */
+}
+
+.hero .image-container {
+    max-width: 400px;
+    overflow: hidden; /* Ensure that the effects do not spill out of the container */
+    position: relative; /* Required for overlay effect */
+}
+
+.hero .image-container img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); /* Existing shadow for depth */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effects */
+    border: 3px solid #3498db; /* Outline with color */
+}
+
+.hero .image-container:hover img {
+    transform: scale(1.05); /* Slight zoom effect on hover */
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4); /* Enhanced shadow on hover */
+}
+
+.hero .image-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)); /* Subtle gradient overlay */
+    border-radius: 10px;
+    transition: opacity 0.3s ease;
+    opacity: 0; /* Initially hidden */
+}
+
+.hero .image-container:hover::before {
+    opacity: 1; /* Show overlay on hover */
+}
+
+
+    section {
+        padding: 50px;
+        background-color: #1e2a3a;
+    }
+
+    h2 {
+        border-bottom: 2px solid #3498db;
+        padding-bottom: 10px;
+        margin-bottom: 20px;
+    }
+
+    .resume-content {
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    .resume-content ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    .resume-content ul li {
+        margin-bottom: 10px;
+    }
+
+    .resume-content h3 {
+        margin-bottom: 5px;
+        color: #3498db;
+    }
+
+    .resume-content p {
+        margin: 0;
+    }
+
+    #contact {
+    background-color: #1e2a3a;
+    padding: 50px 0;
+}
+
+.contact-info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+}
+
+.contact-item i {
+    font-size: 36px; /* Adjust size as needed */
+    color: #3498db;
+    transition: color 0.3s ease;
+}
+
+.contact-item a:hover i {
+    color: #2980b9; /* Change color on hover if desired */
+}
+
+
+h2 {
+    text-align: center;
+    color: #3498db;
+    margin-bottom: 40px;
+    font-size: 2em;
+}
+
+    section#projects {
+    background-color: #1e2a3a;
+    padding: 10px 0;
+}
+
+.projects-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.project-card {
+    background-color: #2a3a5e;
+    border-radius: 10px;
+    padding: 20px;
+    width: 300px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card h3 {
+    margin-top: 0;
+    color: #3498db;
+}
+
+.project-card p {
+    margin: 10px 0;
+    color: #fff;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+h2 {
+    text-align: center;
+    color: #3498db;
+    margin-bottom: 40px;
+    font-size: 2.5em;
+}
+.contact-item i {
+    font-size: 24px;
+    color: #3498db;
+    margin-right: 15px;
+}
+.skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    grid-template-columns: repeat(3, 1fr); /* Three equal columns */
+    justify-content: center;
+    gap: 10px;
+}
+@media only screen and (max-width: 600px) {
+    .skill-box {
+        width: 80px;
+        height: 80px;
+        font-size: 12px;
+        padding: 5px;
+        margin: 5px;
+    }
+}
+
+.skill-card {
+    background-color: #2a3a5e;
+    border-radius: 10px;
+    padding: 20px;
+    color: #fff;
+    text-align: center;
+    width: 100px;
+    height: 130px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    position: relative; /* For pseudo-element positioning */
+    overflow: hidden; /* Ensure inner content is clipped */
+}
+
+.skill-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.4);
+    background-color: #3b4a7f; /* Slightly lighter color on hover */
+}
+
+/* Adding a pseudo-element for a unique effect */
+.skill-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.1); /* Light overlay */
+    opacity: 0; /* Start hidden */
+    transition: opacity 0.3s ease;
+    border-radius: 10px; /* Match the card's border radius */
+}
+
+.skill-card:hover::before {
+    opacity: 1; /* Show overlay on hover */
+}
+
+/* Adding a glowing effect */
+.skill-card:hover {
+    box-shadow: 0 0 10px rgba(52, 152, 219, 0.7), 0 0 30px rgba(52, 152, 219, 0.5);
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 576px) {
+    .skill-card {
+        width: 100%; /* Full width on small screens */
+        padding: 15px; /* Adjust padding */
+        font-size: 1.1em; /* Slightly larger text */
+    }
+}
+
+#certifications {
+    padding: 20px;
+    background-color: #1e2a3a;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.certification-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 15px;
+}
+
+.certification-image {
+    max-width: 490px;
+    max-height: 150px;
+    margin-right: 150px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.certification-details {
+    display: flex;
+    flex-direction: column;
+}
+
+.certification-details p {
+    font-size: 1rem;
+    font-weight: bold;
+    margin: 0;
+}
+
+.certification-details a {
+    font-size: 0.875rem;
+    color: #007bff;
+    text-decoration: none;
+}
+
+.certification-details a:hover {
+    text-decoration: underline;
+}
+
+.pending-certifications {
+    margin-top: 20px;
+    padding-left: 100px; /* Adjust this value as needed */
+}
+
+.pending-certifications p {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.pending-certifications ul {
+    list-style-type: disc;
+    margin-left: 20px;
+}
+
+.pending-certifications ul li {
+    margin-bottom: 5px;
+}
+#about {
+    padding: 20px;
+    background-color: #1e2a3a;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#about h2 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+
+#about p {
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+.download-cv {
+    margin-top: 20px;
+}
+
+.btn-download-cv {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: #fff;
+    background-color: #007bff;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.btn-download-cv:hover {
+    background-color: #0056b3;
+}
+
+.btn-download-cv i {
+    margin-right: 8px;
+}
+#education {
+    padding: 50px 0;
+}
+
+.resume-content h2 {
+    text-align: center;
+    color: #2a3a5e;
+    margin-bottom: 30px;
+    font-size: 2.5em;
+}
+
+.education-container {
+    display: flex;
+    justify-content: center;
+}
+
+.education-card {
+    background-color: #2a3a5e;
+    border-radius: 10px;
+    padding: 30px;
+    color: #fff;
+    width: 70%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.education-card h3 {
+    font-size: 1.8em;
+    margin-bottom: 10px;
+    color: #ffffff;
+}
+
+.education-card p {
+    font-size: 1.2em;
+    margin-bottom: 15px;
+    color: #e0e0e0;
+}
+
+.education-details {
+    list-style-type: none;
+    padding: 0;
+}
+
+.education-details li {
+    font-size: 1.1em;
+    margin-bottom: 8px;
+    color: #c9c9c9;
+    position: relative;
+    padding-left: 20px;
+}
+
+.education-details li::before {
+    content: '⚡';
+    position: absolute;
+    left: 0;
+    color: #f4c10f; /* Gold color for bullet points */
+    font-size: 1.2em;
+}
+
+.education-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+    .education-card {
+        width: 90%;
+        padding: 20px;
+    }
+}
+
+
+
+
+
+
+</style>
+<body>
+
+    <nav>
+        <div class="logo">RT</div>
+        <ul>
+            <li><a href="#home" class="active">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section id="home" class="hero">
+        <div class="content">
+            <div class="intro">
+    <h1 class="animated-name">Hi, I'm Rana Toheed</h1>
+</div>
+            <h2>Computer Science Student</h2>
+            <p>I am a highly motivated Computer Science student with strong programming skills and a passion for data analysis.</p>
+            <div class="buttons">
+                <a href="#contact" class="btn hire-me">Hire Me</a>
+                <a href="tel:+923020551552" class="btn talk">Let's Talk</a>
+            </div>
+        </div>
+        <div class="image-container">
+            <img src="static/img/me.png">
+        </div>
+    </section>
+
+    <section id="about">
+    <div class="resume-content">
+        <h2>About Me</h2>
+        <p>I am a Computer Science student with a passion for data science and data analysis. I have experience in programming with Python, Java, and Kotlin, and I enjoy working on data-driven projects. I have skills in machine learning, data visualization, and using tools like Power BI and Tableau to turn data into insights. I'm excited to apply my knowledge in real-world scenarios and continue learning in the field of data science..</p>
+        <div class="download-cv">
+            <a href="static/documents/RanaToheedUllahKhanpdf.pdf" download="Rana Toheed CV.pdf" class="btn-download-cv">
+                <i class="fa fa-download"></i> Download My CV
+            </a>
+        </div>
+    </div>
+</section>
+
+
+    <section id="experience">
+        <div class="resume-content">
+            <h2>Experience</h2>
+            <h3>CODESOFT - Data Science Intern</h3>
+            <p>10/03/2024 – 10/04/2024</p>
+            <ul>
+                <li>Using machine learning and other data mining techniques to get insights from massive datasets.</li>
+                <li>Experience in analyzing data and creating reports with Business Intelligence tools.</li>
+            </ul>
+
+            <h3>CRICFLEX - Machine Learning Intern</h3>
+            <p>01/08/2023 – 01/09/2023</p>
+            <ul>
+                <li>Use Python and machine learning libraries (TensorFlow) to design and implement algorithms for image processing and analysis.</li>
+                <li>Developed, trained, and optimized deep learning models for computer vision tasks.</li>
+                <li>Gained valuable experience in applying machine learning techniques to real-world problems.</li>
+            </ul>
+
+            <h3>Pakistan Telecommunication Company Limited (PTCL) Headquarters - Cyber Security Intern</h3>
+            <p>01/08/2022 – 15/09/2022</p>
+            <ul>
+                <li>Conducted vulnerability assessments and penetration tests using tools like Burp Suite to identify and mitigate security risks.</li>
+                <li>Effectively communicated security findings and recommendations to technical and non-technical audiences.</li>
+                <li>Demonstrated strong collaboration skills by working effectively with cross-functional teams.</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="skills">
+    <div class="resume-content">
+        <h2>What I Do</h2>
+        <div class="skills-container">
+            <div class="skill-card">
+                <img src="static/img/html-icon.svg" alt="HTML5" class="skill-icon">
+                HTML5
+            </div>
+            <div class="skill-card">
+                <img src="static/img/css-icon.svg" alt="CSS3" class="skill-icon">
+                CSS3
+            </div>
+            <div class="skill-card">
+                <img src="static/img/database-add-icon.svg" alt="SQL Database" class="skill-icon">
+                SQL Database
+            </div>
+            <div class="skill-card">
+                <img src="static/img/python-programming-language-icon.svg" alt="Python" class="skill-icon">
+                Python
+            </div>
+            <div class="skill-card">
+                <img src="static/img/artificial-intelligence-ai-icon.svg" alt="Machine Learning" class="skill-icon">
+                Machine Learning
+            </div>
+            <div class="skill-card">
+                <img src="static/img/data-science-icon.svg" alt="Data Science" class="skill-icon">
+                Data Science
+            </div>
+            <div class="skill-card">
+                <img src="static/img/postgresql.svg" alt="PostgreSQL" class="skill-icon">
+                PostgreSQL
+            </div>
+            <div class="skill-card">
+                <img src="static/img/microsoft-excel-icon.svg" alt="Kaggle" class="skill-icon">
+                Microsoft Excel
+            </div>
+            <div class="skill-card">
+                <img src="static/img/power-bi-icon.svg" alt="Power BI" class="skill-icon">
+                Power BI
+            </div>
+            <div class="skill-card">
+                <img src="static/img/tableau.svg" alt="Tableau" class="skill-icon">
+                Tableau
+            </div>
+        </div>
+        <h2>What I Offer</h2>
+        <ul>
+            <li>⚡ Develop highly interactive front-end interfaces for web applications</li>
+            <li>⚡ Implement databases and ensure backend functionality with ASP.NET and SQL</li>
+            <li>⚡ Integration of Machine Learning models using Jupyter Notebook, PyCharm, and Google Colab</li>
+            <li>⚡ Transform raw data into insights and generate reports that help organizations grow</li>
+        </ul>
+    </div>
+</section>
+
+
+
+   <section id="certifications">
+    <div class="resume-content">
+        <h2>Certifications</h2>
+        <ul>
+            <li class="certification-item">
+                <img src="static/img/ibm certificate.png" alt="Data Science Certificate" class="certification-image">
+                <div class="certification-details">
+                    <p>What is Data Science by IBM from Coursera</p>
+                    <a href="https://coursera.org/verify/Z8APT86J9FCS" target="_blank">Verify link</a>
+                </div>
+            </li>
+            <li>Team Organizer in ROBO FIESTA</li>
+            <li class="certification-item">
+            </li>
+        </ul>
+    </div>
+</section>
+
+
+
+
+    <section id="projects">
+    <div class="resume-content">
+        <h2>Projects</h2>
+        <div class="projects-container">
+            <div class="project-card">
+                <img src="static/img/churn1.png" alt="Data Cleaning in Python Pandas" style="width:100%; height:auto;">
+                <h3>Data Analysis</h3>
+                <p><strong>analyzed churn rates for Databel</strong></p>
+                <p>I’m excited to share a project I worked on, where I analyzed churn rates for Databel, a subscription-based telecom company, using Power BI. I developed comprehensive dashboards to identify key metrics, visualized customer behavior patterns and proposed data-driven strategies to reduce churn. This project also showcased my problem-solving abilities in addressing the underlying causes of customer attrition.</p>
+                <a href="https://lnkd.in/dZsx3cj4" target="_blank" >Check it here</a>
+            </div>
+            <div class="projects-container">
+            <div class="project-card">
+                <img src="static/img/titani1.png" alt="Data Cleaning in Python Pandas" style="width:100%; height:auto;">
+                <h3>Data Analysis</h3>
+                <p><strong>Titanic dataset to explore passenger survival rates</strong></p>
+                <p>Analyzes the Titanic dataset to explore passenger survival rates using data manipulation and visualization. It imports the necessary libraries, loads the dataset, and examines its structure and missing values. Key visualizations include a pie chart of survival proportions, histograms of numerical features, and kernel density estimates for age and fare by survival status. .</p>
+                <a href="https://colab.research.google.com/drive/1emSlATfDfFWAMIYZiYNHN38FhhTx0Q5o#scrollTo=Bon9OBiHetMz" target="_blank" >Check it here</a>
+            </div>
+
+            <div class="projects-container">
+            <div class="project-card">
+                <img src="static/img/movie 1.png" alt="Data Cleaning in Python Pandas" style="width:100%; height:auto;">
+                <h3>Data Analysis using python</h3>
+                <p><strong>Visualizing an IMDb movies dataset</strong></p>
+                <p>Utilizing libraries such as `numpy`, `pandas`, `matplotlib`, and `seaborn`. It begins by loading the data from a CSV file and conducts initial explorations, including shape, structure, and descriptive statistics. Identifies and handles missing values by dropping rows lacking critical information like ratings, directors, and key actors. It then generates visualizations to illustrate the distribution of movie ratings and the number of releases per year, providing insights into trends within the dataset.</p>
+                <a href="https://colab.research.google.com/drive/1SohzjGR65gmfPw_dqymVUEBQoT2PBAB1#scrollTo=eGylQhl43AgO" target="_blank" >Check it here</a>
+            </div>
+            <div class="project-card">
+                <img src="static/img/tr1.png" alt="Data Cleaning in Python Pandas" style="width:100%; height:auto;">
+                <h3>Application Development</h3>
+                <p><strong>TRAX (Carpooling Application)</strong></p>
+                <p>A comprehensive carpooling application designed to connect users looking for ride-sharing opportunities. Developed with Java and Kotlin for Android and iOS platforms.</p>
+            </div>
+            <div class="project-card">
+                <h3>Web Development</h3>
+                <p><strong>BETON (Construction Website)</strong></p>
+                <p>A professional website for a construction company showcasing their services, projects, and client testimonials. Built using HTML, CSS, and JavaScript with a responsive design.</p>
+            </div>
+            <div class="project-card">
+                <h3>Data Cleaning in Python Pandas</h3>
+                <p><strong>Highest Career Batting Averages in Cricket</strong></p>
+                <p>Data cleaning and analysis project using Python Pandas to identify the highest career batting averages in cricket. Included data preprocessing, analysis, and visualization.</p>
+            </div>
+            <div class="project-card">
+                <h3>Data Visualization</h3>
+                <p><strong>COVID-19 Dashboard</strong></p>
+                <p>Create an interactive dashboard using Tableau to visualize COVID-19 trends globally. Incorporated real-time data and various charts to provide insights into pandemic progression.</p>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+    </section>
+    <section id="education">
+    <div class="resume-content">
+        <h2>Education</h2>
+        <div class="education-container">
+            <div class="education-card">
+                <h3>
+                    <a href="https://hitecuni.edu.pk" target="_blank" style="color: #ffffff; text-decoration: none;">
+                        HITEC University, Taxila, Pakistan
+                    </a>
+                </h3>
+                <p><strong>Bachelor of Science in Computer Science</strong></p>
+                <p>July 2020 - July 2024</p>
+                <ul class="education-details">
+                    <li>Programming Fundamentals</li>
+                    <li>Object Oriented Programming</li>
+                    <li>Data Structures and Algorithms</li>
+                    <li>Database and Management Systems</li>
+                    <li>Machine Learning</li>
+                    <li>Deep Learning</li>
+                    <li>Data Science</li>
+                    <li>Big Data Programming</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+    <section id="contact">
+    <div class="resume-content">
+        <h2>Contact Me</h2>
+        <div class="contact-info">
+            <div class="contact-item">
+                <a href="mailto:ranatoheed100@gmail.com" aria-label="Email">
+                    <i class="fas fa-envelope"></i>
+                </a>
+            </div>
+            <div class="contact-item">
+                <a href="tel:+923020551552" aria-label="Phone">
+                    <i class="fas fa-phone-alt"></i>
+                </a>
+            </div>
+            <div class="contact-item">
+                <a href="https://www.linkedin.com/in/rana-toheed-0226a2274" target="_blank" aria-label="LinkedIn">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+<script>
+    const navLinks = document.getElementById('nav-links');
+    <script>
+    window.onload = function() {
+        document.querySelector('.animated-name').classList.add('fade-in');
+    };
+</script>
+</body>
+</html>
